@@ -1,0 +1,97 @@
+(setq inhibit-startup-screen t)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(load-theme 'wombat t)
+
+         ;; html
+(defun hukasx0-html-skeleton ()
+  "Insert html website skeleton"
+  (interactive)
+  (insert "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n   <meta charset=\"UTF-8\">\n   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>Website</title>\n</head>\n<body>\n   <h1>Hello world!</h1>\n</body>\n</html>\n"))
+(defun hukasx0-html-listOrdered ()
+  "Insert ordered list with 3 list items"
+  (interactive)
+  (insert "<ol>\n   <li>item1</li>\n   <li>item2</li>\n   <li>item3</li>\n</ol>\n"))
+(defun hukasx0-html-listUnordered ()
+  "Insert unordered list with 3 list items"
+  (interactive)
+  (insert "<ul>\n   <li>item1</li>\n   <li>item2</li>\n   <li>item3</li>\n</ul>\n"))
+(defun hukasx0-html-cssLink ()
+  "Insert external CSS"
+  (interactive)
+  (insert "<link rel=\"stylesheet\" href=\"main.css\">"))
+(defun hukasx0-html-cssInline ()
+  (interactive)
+  (insert "<style>\n   \n</style>"))
+(defun hukasx0-html-jsLink ()
+  (interactive)
+  (insert "<script src=\"main.js\"></script>")
+(defun hukasx0-html-jsInline ()
+  (interactive)
+  (insert "<script>\n   \n</script>"))
+(defun hukasx0-html-jquery ()
+  (interactive)
+  (insert "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>"))
+(defun hukasx0-html-bootstrap ()
+  (interactive)
+  (insert "<!-- Bootstrap CSS -->\n   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\n</head>\n<body>\n<!-- jQuery first, then Popper.js, then Bootstrap JS -->\n   <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\n   <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\n   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>\n</body>"))
+(defun hukasx0-html-img ()
+  "Insert an img tag"
+  (interactive)
+  (insert "<img src=\"my_image.png\" alt=\"my image\">"))
+(defun hukasx0-html-div (string)
+  "Insert div with a class"
+  (interactive "sDiv class: ")
+  (insert "<div class=\""string"\">\n   \n</div>"))
+(defun hukasx0-html-comment (string)
+  (interactive "sComment text: ")
+  (insert "<!-- "string" -->"))
+         ;; CSS
+(defun hukasx0-css-selector (string)
+  "Insert CSS selector"
+  (interactive "sSelector name: ")
+  (insert string"{\n   \n}"))
+(defun hukasx0-css-class (string)
+  "Insert CSS class"
+  (interactive "sClass name: ")
+  (insert "."string"{\n   \n}"))
+(defun hukasx0-css-id (string)
+  "Insert css by id"
+  (interactive "sID: ")
+  (insert "#"string"{\n   \n}"))
+         ;; JavaScript
+(defun hukasx0-js-fun (string)
+  "Insert javascript function name"
+  (interactive "sJavaScript function name: ")
+  (insert "function "string"(){\n   \n}"))
+(defun hukasx0-js-getElementId (string)
+  "Insert document.getElementById(<ID>)"
+  (interactive "sID: ")
+  (insert "document.getElementById('"string"');"))
+(defun hukasx0-js-var (string)
+  "Insert a variable"
+  (interactive "sVariable name: ")
+  (insert "var "string" = 0;"))
+(defun hukasx0-js-for ()
+  "Insert for loop"
+  (interactive)
+  (insert "for (let i = 0; i < 10; i++) {\n   console.log(i)\n}"))
+(defun hukasx0-js-forArr (string)
+  "Insert an array for loop"
+  (interactive "sArray name: ")
+  (insert "for (let i = 0; i < "string".length; i++) {\n   console.log("string"[i]);\n}"))
+(defun hukasx0-js-forLiterables (string)
+  (interactive "sLiterable name: ")
+  (insert "for (const x of "string") {\n   \n}"))
+(defun hukasx0-js-elseif ()
+  (interactive)
+  (insert "if (1 = 1) {\n   console.log(1);\n}\nelse if (1 = 2) {\n   console.log(2);\n}\nelse {\n   console.log(\"else\");\n}"))
+(defun hukasx0-js-if (string)
+  (interactive "sStatement: ")
+  (insert "if ("string") {\n   \n}"))
+(defun hukasx0-js-switch ()
+  (interactive)
+  (insert "switch (1) {\n   case 1:\n      console.log(1);\n      break;\n   default:\n      console.log(0);\n}"))
+(defun hukasx0-js-lambda ()
+  (interactive)
+  (insert "lambda = () => 0;"))
